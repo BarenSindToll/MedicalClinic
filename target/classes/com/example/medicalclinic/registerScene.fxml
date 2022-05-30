@@ -30,16 +30,6 @@
                </font>
             </Label>
 
-            <Label layoutX="105.0" layoutY="232.0"  textFill="WHITE">
-               <font>
-                  <Font name="Lucida Calligraphy Italic" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="110.0" layoutY="298.0"  textFill="WHITE">
-               <font>
-                  <Font name="Lucida Calligraphy Italic" size="24.0" />
-               </font>
-            </Label>
             <TextField fx:id="username" layoutX="200.0" layoutY="234.0" promptText="Username">
                <font>
                   <Font name="Lucida Calligraphy Italic" size="14.0" />
@@ -50,12 +40,13 @@
                   <Font name="Lucida Calligraphy Italic" size="14.0" />
                </font>
             </PasswordField>
+            <ChoiceBox fx:id="role" layoutX="210.0" layoutY="324.0" prefWidth="150.0" />
             <Button fx:id="createButton" layoutX="212.0" layoutY="366.0"  mnemonicParsing="false" onAction="#userRegister" text="Create account" textFill="#162c53">
                <font>
                   <Font name="Lucida Calligraphy Italic" size="18.0" />
                </font>
             </Button>
-            <ChoiceBox fx:id="role" layoutX="210.0" layoutY="324.0" prefWidth="150.0" />
+
             <Label fx:id="wrongCreate" layoutX="48.0" layoutY="168.0" prefHeight="28.0" prefWidth="546.0" textFill="RED">
                <font>
                   <Font name="Lucida Calligraphy Italic" size="18.0" />
