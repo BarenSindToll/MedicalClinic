@@ -36,7 +36,7 @@ public class DoctorsList {
         return doctors.toString();
     }
 
-    public static void loadDocotrsFromFile() throws IOException {
+    public static void loadDoctorsFromFile() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             doctors = objectMapper.readValue(Paths.get("doctors.json").toFile(), new TypeReference<>() {

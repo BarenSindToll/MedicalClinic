@@ -2,4 +2,8 @@
   "username" : "admin1",
   "password" : "admin1",
   "role" : "Admin"
+}, {
+  "username" : "doctor1",
+  "password" : "doctor1",
+  "role" : "Doctor"
 } ]

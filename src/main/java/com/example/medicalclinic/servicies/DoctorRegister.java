@@ -19,7 +19,7 @@ public class DoctorRegister {
     private static void persistDoctors() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("users.json"), DoctorsList.getDoctors());
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("doctors.json"), DoctorsList.getDoctors());
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException();
