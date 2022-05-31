@@ -10,4 +10,12 @@
   "username" : "patient1",
   "password" : "patient1",
   "role" : "Patient"
+}, {
+  "username" : "admin",
+  "password" : "admin",
+  "role" : "Admin"
+}, {
+  "username" : "eu",
+  "password" : "eu",
+  "role" : "Patient"
 } ]
