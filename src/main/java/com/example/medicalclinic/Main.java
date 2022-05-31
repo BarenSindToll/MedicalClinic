@@ -24,7 +24,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root,900,650));
         primaryStage.show();
     }
-
+//////juyjyujs
     public void changeScene(String fxml) throws IOException
     {
         Parent pane=FXMLLoader.load(getClass().getResource(fxml));
