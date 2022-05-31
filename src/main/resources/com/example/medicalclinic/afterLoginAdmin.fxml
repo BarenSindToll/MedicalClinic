@@ -16,29 +16,41 @@
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.DoctorRegisterScene">
   <tabs>
       <Tab text="Modify Appointments">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <TableView fx:id="tableOfAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="691.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
-                    <columns>
-                      <TableColumn fx:id="dateColumn" prefWidth="193.0" text="date" />
-                      <TableColumn fx:id="patientColumn" minWidth="0.0" prefWidth="176.0" text="patient" />
-                        <TableColumn fx:id="serviceColumn" prefWidth="194.0" text="service" />
-                        <TableColumn fx:id="doctorColumn" prefWidth="127.0" text="doctors" />
-                    </columns>
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                          <columns>
+                              <TableColumn fx:id="dateSetColumn" prefWidth="160.0" text="date" />
+                              <TableColumn fx:id="patientColumn" prefWidth="160.0" text="patient" />
+                              <TableColumn fx:id="doctorSetColumn" prefWidth="160.0" text="doctor" />
+                              <TableColumn fx:id="specialtySetColumn" prefWidth="160.0" text="specialty" />
+
+                          </columns>
+                          <effect>
+                              <Glow />
+                          </effect>
+                      </TableView>
+                  </children>
+              </AnchorPane>
+          </content>
       </Tab>
 
-      <Tab text="Add doctors/services">
+      <Tab text="Modify doctors">
           <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="466.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
+                      <TableView fx:id="tableOfDoctors" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                          <columns>
+
+                              <TableColumn fx:id="doctorColumn" prefWidth="190.0" text="doctor" />
+                              <TableColumn fx:id="specialtyColumn" prefWidth="190.0" text="specialty" />
+
+                          </columns>
+                          <effect>
+                              <Glow />
+                          </effect>
+                      </TableView>
 
                       <TextField fx:id="name" layoutX="200.0" layoutY="234.0" promptText="Doctor's name">
                           <font>

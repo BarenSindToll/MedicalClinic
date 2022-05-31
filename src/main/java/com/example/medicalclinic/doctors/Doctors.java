@@ -2,7 +2,7 @@ package com.example.medicalclinic.doctors;
 
 public class Doctors {
     public String name;
-    public String service;
+    public String specialty;
 
 
     public Doctors()
@@ -10,10 +10,10 @@ public class Doctors {
 
     }
 
-    public Doctors(String name, String service)
+    public Doctors(String name, String specialty)
     {
         this.name=name;
-        this.service=service;
+        this.specialty=specialty;
 
     }
     public String getDoctorName()
@@ -28,15 +28,15 @@ public class Doctors {
         this.name=name;
     }
 
-    public String getService()
+    public String getSpecialty()
     {
 
-        return service;
+        return specialty;
     }
-    public void setPassword()
+    public void setSpecialty()
     {
 
-        this.service=service;
+        this.specialty=specialty;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Doctors {
         Doctors doctor=(Doctors) o;
         if(!name.equals(doctor.name))
             return false;
-        return doctor.equals(doctor.service);
+        return doctor.equals(doctor.specialty);
 
     }
 }

@@ -11,46 +11,47 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-    <Tab text="Your appointments">
-         <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <ListView layoutX="65.0" layoutY="158.0" prefHeight="407.0" prefWidth="772.0" />
-                  <Label alignment="CENTER" layoutY="45.0" prefHeight="70.0" prefWidth="900.0" text="Today's appointments" textFill="WHITE">
-                     <font>
-                        <Font name="Lucida Calligraphy Italic" size="51.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </content></Tab>
-    <Tab text="Your patients">
-         <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="70" layoutY="100" pickOnBounds="true" preserveRatio="true">
-                       <image>
-                           <Image url="@Img/search.jpg" />
-                       </image>
-                   </ImageView>
-                  <TextField layoutX="160.0" layoutY="100.0" prefHeight="53.0" prefWidth="363.0" promptText="Patient name">
-                     <font>
-                        <Font name="Lucida Calligraphy Italic" size="17.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="274.0" layoutY="165.0" prefHeight="66.0" prefWidth="273.0"  textFill="WHITE">
-                     <font>
-                        <Font name="Lucida Calligraphy Italic" size="21.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="183.0" fitWidth="255.0" layoutX="604.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <Tab text="Your Appointments">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                          <columns>
+                              <TableColumn fx:id="dateSetColumn" prefWidth="240.0" text="Date" />
+                              <TableColumn fx:id="doctorSetColumn" prefWidth="240.0" text="Patient" />
+                          </columns>
+                          <effect>
+                              <Glow />
+                          </effect>
+                      </TableView>
+                  </children>
+              </AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Check Patient">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
+                  <children>
+                      <TableView fx:id="tableOfPatients" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
 
-                  </ImageView>
-               </children>
-            </AnchorPane>
-         </content></Tab>
+                          <columns>
+                              <TableColumn fx:id="patientColumn" prefWidth="240.0" text="Name" />
+                              <TableColumn fx:id="historyColumn" prefWidth="240.0" text="History" />
+
+                          </columns>
+                          <effect>
+                              <Glow />
+                          </effect>
+                      </TableView>
+                  </children>
+              </AnchorPane>
+          </content>
+      </Tab>
   </tabs>
 </TabPane>
