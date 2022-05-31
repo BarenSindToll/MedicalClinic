@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.DoctorRegisterScene">
   <tabs>
       <Tab text="Modify Appointments">
         <content>
@@ -35,54 +35,35 @@
         </content>
       </Tab>
 
-      <Tab text="Modify Services">
+      <Tab text="Add doctors/services">
           <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="466.0">
                   <children>
 
-                      <TextField fx:id="doctor" layoutX="10.0" layoutY="50.0" promptText="Add a doctor">
+                      <TextField fx:id="name" layoutX="200.0" layoutY="234.0" promptText="Doctor's name">
                           <font>
                               <Font name="Lucida Calligraphy Italic" size="14.0" />
                           </font>
                       </TextField>
-                      <TextField fx:id="service" layoutX="10.0" layoutY="100.0" promptText="Add a service">
+                      <TextField fx:id="service" layoutX="200.0" layoutY="279.0" promptText="Service">
                           <font>
                               <Font name="Lucida Calligraphy Italic" size="14.0" />
                           </font>
                       </TextField>
-                      <Button layoutX="300.0" layoutY="50.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add" textFill="WHITE">
+
+                      <Button fx:id="createButton" layoutX="212.0" layoutY="366.0"  mnemonicParsing="false" onAction="#doctorRegister" text="Create entry" textFill="#162c53">
                           <font>
-                              <Font name="Lucida Calligraphy Italic" size="21.0" />
-                          </font>
-                      </Button>
-                      <Button layoutX="300.0" layoutY="100.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Add" textFill="WHITE">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="21.0" />
-                          </font>
-                      </Button>
-                      <TextField fx:id="removed" layoutX="10.0" layoutY="200.0" promptText="Remove a service/doctor">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="14.0" />
-                          </font>
-                      </TextField>
-                      <Button layoutX="300.0" layoutY="200.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Remove" textFill="WHITE">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="21.0" />
+                              <Font name="Lucida Calligraphy Italic" size="18.0" />
                           </font>
                       </Button>
 
-                      <AnchorPane layoutX="37.0" layoutY="126.0" prefHeight="268.0" prefWidth="859.0">
-                          <children>
-                              <ScrollBar layoutX="837.0" layoutY="4.0" orientation="VERTICAL" prefHeight="261.0" prefWidth="16.0" />
-                              <Label layoutX="9.0" layoutY="47.0" prefHeight="38.0" prefWidth="197.0" textFill="WHITE">
-                                  <font>
-                                      <Font name="Lucida Calligraphy Italic" size="18.0" />
-                                  </font>
-                              </Label>
-
-                          </children>
-                      </AnchorPane>
-                  </children></AnchorPane>
+                      <Label fx:id="wrongCreate" layoutX="48.0" layoutY="168.0" prefHeight="28.0" prefWidth="546.0" textFill="RED">
+                          <font>
+                              <Font name="Lucida Calligraphy Italic" size="18.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </AnchorPane>
           </content>
       </Tab>
 
