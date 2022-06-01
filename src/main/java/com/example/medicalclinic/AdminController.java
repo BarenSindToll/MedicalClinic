@@ -1,7 +1,9 @@
-package com.example.medicalclinic.user;
+package com.example.medicalclinic;
 
 import com.example.medicalclinic.exceptions.UsernameAlreadyExistsException;
 import com.example.medicalclinic.servicies.Register;
+import com.example.medicalclinic.user.Users;
+import com.example.medicalclinic.user.UsersList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -79,5 +81,17 @@ public class AdminController {
             ErrorText.setText("Doctor with this name already exists!");
         }
         initialize();
+    }
+
+    @FXML
+    Text logoutMessage;
+
+    public void logOut() {
+        Main m = new Main();
+        try {
+            m.changeScene("initial.fxml");
+        } catch (Exception e) {
+            logoutMessage.setText("Failed to log out...");
+        }
     }
 }

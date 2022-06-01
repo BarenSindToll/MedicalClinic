@@ -13,8 +13,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.user.AdminController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.AdminController">
   <tabs>
       <Tab text="Modify Appointments">
           <content>
@@ -33,6 +35,12 @@
                           </effect>
                       </TableView>
                   </children>
+
+                  <Text fx:id="logoutMessage" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut"
+                          text="Log Out"/>
+
+
               </AnchorPane>
           </content>
       </Tab>
