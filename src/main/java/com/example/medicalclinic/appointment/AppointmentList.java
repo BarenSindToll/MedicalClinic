@@ -1,9 +1,11 @@
 package com.example.medicalclinic.appointment;
 
+import com.example.medicalclinic.user.UsersList;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,6 +15,15 @@ public class AppointmentList {
 
     public static void addAppointment(Appointment newApp) {
         app.add(newApp);
+    }
+    public static void persistAppointment() {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("appointment.json"), AppointmentList.getAppointment());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException();
+        }
     }
 
     @Override

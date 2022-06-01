@@ -5,6 +5,9 @@ public class Appointment {
     private String patient;
     private String doctor;
 
+    public Appointment(){
+
+    }
     public Appointment(String date, String patient, String doctor){
         this.doctor = doctor;
         this.date = date;
