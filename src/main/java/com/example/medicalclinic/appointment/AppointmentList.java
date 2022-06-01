@@ -1,6 +1,5 @@
 package com.example.medicalclinic.appointment;
 
-import com.example.medicalclinic.specialty.Specialty;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
