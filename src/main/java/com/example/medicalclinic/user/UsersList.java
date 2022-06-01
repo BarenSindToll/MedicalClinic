@@ -15,7 +15,7 @@ import java.util.Objects;
 public class UsersList {
 
     private static ArrayList<Users> users = new ArrayList<>();
-
+    public static String logat = "cineva";
     public static void addUser(Users newUser) throws UsernameAlreadyExistsException {
         chechkUserDoesNotAlreadyExist(newUser.getUsername());
         users.add(newUser);

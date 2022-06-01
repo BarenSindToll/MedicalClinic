@@ -10,4 +10,28 @@
   "username" : "patient1",
   "password" : "patient1",
   "role" : "Patient"
+}, {
+  "username" : "admin",
+  "password" : "admin",
+  "role" : "Admin"
+}, {
+  "username" : "eu",
+  "password" : "eu",
+  "role" : "Patient"
+}, {
+  "username" : "e",
+  "password" : "e",
+  "role" : "Patient"
+}, {
+  "username" : "q",
+  "password" : "q",
+  "role" : "Patient"
+}, {
+  "username" : "doc",
+  "password" : "doc",
+  "role" : "Doctor"
+}, {
+  "username" : "pat",
+  "password" : "pat",
+  "role" : "Patient"
 } ]
