@@ -82,6 +82,25 @@ public class AdminController {
         }
         initialize();
     }
+    @FXML
+    private ListView<String> listPatientOfNames;
+
+    @FXML
+    public void initialize2(){
+        listPatientOfNames.getItems().clear();
+        ArrayList<Users> dl = UsersList.getUsersWithRole("Patient");
+        for(Users u : dl)
+            listPatientOfNames.getItems().add(u.getUsername());
+    }
+
+    @FXML
+    void removePatient(MouseEvent event) {
+        int selectID = listPatientOfNames.getSelectionModel().getSelectedIndex();
+        listPatientOfNames.getItems().remove(selectID);
+        initialize2();
+    }
+
+
 
     @FXML
     Text logoutMessage;
