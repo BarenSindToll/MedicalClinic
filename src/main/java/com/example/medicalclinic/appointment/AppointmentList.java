@@ -7,8 +7,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AppointmentList {
     private static ArrayList<Appointment> app = new ArrayList<>();
@@ -43,5 +45,13 @@ public class AppointmentList {
 
     public static ArrayList<Appointment> getAppointment() {
         return app;
+    }
+
+    public static ArrayList<Appointment> getDoctorAppointment() {
+        ArrayList<Appointment> array = new ArrayList<>();
+        for(Appointment a: app)
+            if(Objects.equals(a.getDoctor(), UsersList.logat))
+                array.add(a);
+        return array;
     }
 }

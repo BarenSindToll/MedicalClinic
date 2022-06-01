@@ -21,29 +21,10 @@
           <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="100.0" layoutY="80.0" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
                           <columns>
-                              <TableColumn fx:id="dateSetColumn" prefWidth="240.0" text="Date" />
-                              <TableColumn fx:id="patientSetColumn" prefWidth="240.0" text="Patient" />
-                          </columns>
-                          <effect>
-                              <Glow />
-                          </effect>
-                      </TableView>
-                  </children>
-              </AnchorPane>
-          </content>
-      </Tab>
-      <Tab text="Check Patient">
-          <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
-                  <children>
-                      <TableView fx:id="tableOfPatients" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
-
-                          <columns>
-                              <TableColumn fx:id="patientColumn" prefWidth="240.0" text="Name" />
-                              <TableColumn fx:id="historyColumn" prefWidth="240.0" text="History" />
-
+                              <TableColumn fx:id="dateSetColumn" prefWidth="350.0" text="Date" />
+                              <TableColumn fx:id="patientSetColumn" prefWidth="350.0" text="Patient" />
                           </columns>
                           <effect>
                               <Glow />
