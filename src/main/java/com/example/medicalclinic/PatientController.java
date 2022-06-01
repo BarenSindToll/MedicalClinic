@@ -1,23 +1,31 @@
-package com.example.medicalclinic.controller;
+package com.example.medicalclinic;
 
 import com.example.medicalclinic.appointment.Appointment;
 import com.example.medicalclinic.appointment.AppointmentList;
+import com.example.medicalclinic.user.UsersList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class PatientController {
+    public TableView tableOfSetAppointments;
+    public TableColumn dateSetColumn;
+    public TableColumn doctorSetColumn;
+    public TableColumn specialtySetColumn;
     @FXML
     private TextField doctor;
     @FXML
-    private TextField username;
+    private Label username;
     @FXML
     private DatePicker date;
 
     @FXML
     private Label message;
+
+    public void initialize(){
+        message.setText("Do you want to make an appointment?");
+        username.setText(UsersList.logat);
+    }
 
     public void addAppointment() {
         AppointmentList.addAppointment(new Appointment(String.valueOf(date.getValue()), username.getText(), doctor.getText()));

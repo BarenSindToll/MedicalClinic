@@ -1,3 +1,4 @@
+com\example\medicalclinic\PatientController.class
 com\example\medicalclinic\Main.class
 com\example\medicalclinic\appointment\AppointmentList.class
 com\example\medicalclinic\DoctorRegisterScene.class
@@ -14,7 +15,6 @@ com\example\medicalclinic\AfterLogin.class
 com\example\medicalclinic\appointment\Appointment.class
 com\example\medicalclinic\LogInController.class
 com\example\medicalclinic\user\Users.class
-com\example\medicalclinic\controller\PatientController.class
 com\example\medicalclinic\doctors\DoctorsList.class
 com\example\medicalclinic\StaffController.class
 com\example\medicalclinic\user\UsersList$1.class

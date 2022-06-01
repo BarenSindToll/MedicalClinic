@@ -19,9 +19,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         UsersList.loadUsersFromFile();
         stg = primaryStage;
-        stg.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("initial.fxml"));
         stg.setTitle("Medical Clinic");
+        stg.setResizable(false);
         stg.setScene(new Scene(root, 900, 650));
         stg.show();
     }
@@ -29,6 +29,7 @@ public class Main extends Application {
     public void changeScene(String fxml) throws IOException
     {
         Parent root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+        stg.setResizable(false);
         stg.setTitle("Medical Clinic");
         stg.setScene(new Scene(root,900,650));
         stg.show();

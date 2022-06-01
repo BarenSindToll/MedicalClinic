@@ -33,7 +33,7 @@ public class LogInController implements Initializable {
     @FXML
     private ChoiceBox<String> role;
 
-    private String [] options={"Doctor","Patient", "Admin"};
+    private final String [] options={"Doctor","Patient", "Admin"};
 
 
     public void userLogIn(ActionEvent event) throws IOException {
@@ -70,9 +70,10 @@ public class LogInController implements Initializable {
         else if(UsersList.checkUserCredentials(new Users(username.getText(),password.getText(),role.getValue())))
         {
             Main m = new Main();
+            UsersList.logat = username.getText();
             if(role.getValue().equals("Patient"))
             {
-                m.changeScene("afterLoginAdmin.fxml");
+                m.changeScene("afterLoginPatient.fxml");
             }
             else
                 if(role.getValue().equals("Doctor"))
