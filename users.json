@@ -18,4 +18,20 @@
   "username" : "eu",
   "password" : "eu",
   "role" : "Patient"
+}, {
+  "username" : "e",
+  "password" : "e",
+  "role" : "Patient"
+}, {
+  "username" : "q",
+  "password" : "q",
+  "role" : "Patient"
+}, {
+  "username" : "doc",
+  "password" : "doc",
+  "role" : "Doctor"
+}, {
+  "username" : "pat",
+  "password" : "pat",
+  "role" : "Patient"
 } ]

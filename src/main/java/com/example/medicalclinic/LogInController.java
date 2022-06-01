@@ -72,7 +72,7 @@ public class LogInController implements Initializable {
             Main m = new Main();
             if(role.getValue().equals("Patient"))
             {
-                m.changeScene("afterLoginPatient.fxml");
+                m.changeScene("afterLoginAdmin.fxml");
             }
             else
                 if(role.getValue().equals("Doctor"))

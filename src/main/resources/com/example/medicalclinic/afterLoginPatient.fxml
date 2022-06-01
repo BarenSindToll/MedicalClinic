@@ -35,6 +35,7 @@
                   <TextField fx:id="doctor" layoutX="375.0" layoutY="230.0" />
                   <Label layoutX="283.0" layoutY="184.0" text="Patient name: " />
                   <Label layoutX="285.0" layoutY="234.0" text="Doctor name:" />
+                  <Label layoutX="408.0" layoutY="443.0" fx:id="message" textAlignment="CENTER" />
                </children>
               </AnchorPane>
           </content>

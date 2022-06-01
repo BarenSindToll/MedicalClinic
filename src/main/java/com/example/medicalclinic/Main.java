@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class Main extends Application {
@@ -18,17 +19,19 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         UsersList.loadUsersFromFile();
         stg = primaryStage;
-        primaryStage.setResizable(false);
+        stg.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("initial.fxml"));
-        primaryStage.setTitle("Medical Clinic");
-        primaryStage.setScene(new Scene(root,900,650));
-        primaryStage.show();
+        stg.setTitle("Medical Clinic");
+        stg.setScene(new Scene(root, 900, 650));
+        stg.show();
     }
-//////juyjyujs
+
     public void changeScene(String fxml) throws IOException
     {
-        Parent pane=FXMLLoader.load(getClass().getResource(fxml));
-        stg.getScene().setRoot(pane);
+        Parent root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+        stg.setTitle("Medical Clinic");
+        stg.setScene(new Scene(root,900,650));
+        stg.show();
     }
 
     public static void main(String[] args) {
