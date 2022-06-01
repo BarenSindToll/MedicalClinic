@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #22a08f;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.LogInController">
+         <children>
+
+            <ImageView fitHeight="95.0" fitWidth="71.0" layoutX="400.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/icon2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="wrongLogIn" layoutX="40.0" layoutY="190.0" prefHeight="37.0" prefWidth="527.0" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="350.0" layoutY="234.0" promptText="Username">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="password" layoutX="350.0" layoutY="279.0" promptText="Password">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="14.0" />
+               </font>
+            </PasswordField>
+
+            <ChoiceBox fx:id="role" layoutX="360.0" layoutY="324.0" prefWidth="150.0" />
+
+            <Button fx:id="logIn" layoutX="395.0" layoutY="366.0" mnemonicParsing="false" onAction="#userLogIn" text="Log In" textFill="#162c53">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="18.0" />
+               </font>
+            </Button>
+
+            <Label layoutX="325.0" layoutY="520.0" text="Do you not have an account?" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="createButton" layoutX="355.0" layoutY="550.0" mnemonicParsing="false" onAction="#moveToRegisterPage" prefHeight="32.0" prefWidth="163.0" style="-fx-background-color: transparent;" text="CREATE ACCOUNT" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Lucida Calligraphy Italic" size="13.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+
