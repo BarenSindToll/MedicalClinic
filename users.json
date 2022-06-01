@@ -38,4 +38,24 @@
   "username" : "eee",
   "password" : "meli",
   "role" : "Admin"
+}, {
+  "username" : "pat1",
+  "password" : "pat1",
+  "role" : "Patient"
+}, {
+  "username" : "dutsu",
+  "password" : "dutsu",
+  "role" : "Admin"
+}, {
+  "username" : "sdfwf",
+  "password" : "dcddf",
+  "role" : "doctor"
+}, {
+  "username" : "ddef",
+  "password" : "dsdf",
+  "role" : "doctor"
+}, {
+  "username" : "fkefejrbf",
+  "password" : "cdv",
+  "role" : "doctor"
 } ]
