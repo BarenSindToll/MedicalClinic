@@ -1,6 +1,7 @@
 package com.example.medicalclinic.user;
 
 import com.example.medicalclinic.Main;
+import com.example.medicalclinic.servicies.Register;
 import com.example.medicalclinic.user.Users;
 import com.example.medicalclinic.exceptions.UsernameAlreadyExistsException;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -19,6 +20,7 @@ public class UsersList {
     public static void addUser(Users newUser) throws UsernameAlreadyExistsException {
         chechkUserDoesNotAlreadyExist(newUser.getUsername());
         users.add(newUser);
+        Register.persistUsers();
     }
 
     private static void chechkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -30,6 +32,17 @@ public class UsersList {
 
     public static boolean checkUserCredentials(Users user) {
         return users.contains(user);
+    }
+
+    public static void removeUser(String selectedName) {
+        Users u = null;
+        for (Users user : users) {
+            if (Objects.equals(selectedName, user.getUsername()))
+                u = user;
+        }
+        if(u != null)
+            users.remove(u);
+        Register.persistUsers();
     }
 
     @Override

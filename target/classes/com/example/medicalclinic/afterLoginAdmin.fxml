@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.user.AdminController">
   <tabs>
@@ -18,7 +20,7 @@
           <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: transparent; ">
                           <columns>
                               <TableColumn fx:id="dateSetColumn" prefWidth="160.0" text="date" />
                               <TableColumn fx:id="patientColumn" prefWidth="160.0" text="patient" />
@@ -85,7 +87,12 @@
                   <TextField fx:id="newDocName" layoutX="96.0" layoutY="231.0" prefHeight="40.0" prefWidth="260.0" />
                   <Button layoutX="603.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#removeName" prefHeight="90.0" prefWidth="156.0" text="Remove" />
                   <ListView fx:id="listOfNames" layoutX="573.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
-                  <TextField fx:id="newDocPassword" layoutX="96.0" layoutY="277.0" prefHeight="48.0" prefWidth="261.0" />
+                  <PasswordField fx:id="newDocPassword" layoutX="96.0" layoutY="277.0" prefHeight="48.0" prefWidth="261.0" />
+                  <Text fx:id="ErrorText" fill="#c13535" layoutX="105.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="261.3367004394531">
+                     <font>
+                        <Font name="Calibri Light Italic" size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
         </content>
