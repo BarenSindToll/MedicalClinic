@@ -23,7 +23,6 @@ public class PatientController {
     private Label message;
 
     public void initialize(){
-        message.setText("Do you want to make an appointment?");
         username.setText(UsersList.logat);
     }
 
