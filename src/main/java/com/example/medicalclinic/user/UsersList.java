@@ -51,4 +51,12 @@ public class UsersList {
         return users;
     }
 
+    public static ArrayList<Users> getUsersWithRole(String role){
+        ArrayList<Users> dl = new ArrayList<>();
+        for(Users u : users)
+            if(u.getRole().equals(role))
+                dl.add(u);
+        return dl;
+    }
+
 }
