@@ -18,12 +18,6 @@ public class DoctorController {
     @FXML
     public TableView tableOfSetAppointments;
     @FXML
-    public TableView tableOfPatients;
-    @FXML
-    public TableColumn historyColumn;
-    @FXML
-    public TableColumn patientColumn;
-    @FXML
     public TableColumn patientSetColumn;
 
     @FXML
@@ -31,7 +25,7 @@ public class DoctorController {
 
         ArrayList<Appointment>App;
         AppointmentList.loadUsersFromFile();
-        App = AppointmentList.getAppointment();
+        App = AppointmentList.getDoctorAppointment();
 
         ObservableList<Appointment> Info = FXCollections.observableArrayList(App);
 
