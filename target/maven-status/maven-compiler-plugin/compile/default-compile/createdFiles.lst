@@ -10,7 +10,6 @@ com\example\medicalclinic\exceptions\UsernameAlreadyExistsException.class
 com\example\medicalclinic\user\AdminController.class
 com\example\medicalclinic\doctors\DoctorsList$1.class
 com\example\medicalclinic\servicies\Register.class
-com\example\medicalclinic\AfterLogin.class
 com\example\medicalclinic\appointment\Appointment.class
 com\example\medicalclinic\LogInController.class
 com\example\medicalclinic\DoctorController.class

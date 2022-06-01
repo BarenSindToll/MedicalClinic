@@ -54,4 +54,12 @@ public class AppointmentList {
                 array.add(a);
         return array;
     }
+
+    public static ArrayList<Appointment> getPatientAppointment() {
+        ArrayList<Appointment> array = new ArrayList<>();
+        for(Appointment a: app)
+            if(Objects.equals(a.getPatient(), UsersList.logat))
+                array.add(a);
+        return array;
+    }
 }
