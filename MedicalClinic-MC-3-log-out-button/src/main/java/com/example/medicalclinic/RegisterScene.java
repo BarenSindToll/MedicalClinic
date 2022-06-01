@@ -33,7 +33,7 @@ public class RegisterScene implements Initializable {
     @FXML
     private Label wrongCreate;
 
-    private String[] options = {"Doctor", "Patient", "Admin"};
+    private String[] options = {"Doctor", "Patient"};
 
     public void userRegister(ActionEvent event) throws IOException {
         checkRegister();
