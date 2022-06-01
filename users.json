@@ -34,4 +34,8 @@
   "username" : "pat",
   "password" : "pat",
   "role" : "Patient"
+}, {
+  "username" : "eee",
+  "password" : "meli",
+  "role" : "Admin"
 } ]
