@@ -42,7 +42,7 @@ public class AdminController {
     @FXML
     public void initialize(){
         listOfNames.getItems().clear();
-        ArrayList<Users> dl = UsersList.getUsersWithRole("doctor");
+        ArrayList<Users> dl = UsersList.getUsersWithRole("Doctor");
         for(Users u : dl)
             listOfNames.getItems().add(u.getUsername());
     }
@@ -73,7 +73,7 @@ public class AdminController {
             return;
         }
         try {
-            Register.addUser(newDocName.getText(),newDocPassword.getText(),"doctor");
+            Register.addUser(newDocName.getText(),newDocPassword.getText(),"Doctor");
             newDocName.setText("");
             newDocPassword.setText("");
         } catch (UsernameAlreadyExistsException e) {
