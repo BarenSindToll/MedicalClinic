@@ -4,33 +4,56 @@ import com.example.medicalclinic.appointment.Appointment;
 import com.example.medicalclinic.appointment.AppointmentList;
 import com.example.medicalclinic.servicies.Register;
 import com.example.medicalclinic.user.UsersList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
+import java.time.chrono.ChronoLocalDate;
+import java.util.ArrayList;
 
 public class PatientController {
-    public TableView tableOfSetAppointments;
-    public TableColumn dateSetColumn;
-    public TableColumn doctorSetColumn;
-    public TableColumn specialtySetColumn;
+    @FXML
+    private TableView tableOfSetAppointments;
+    @FXML
+    private TableColumn dateSetColumn;
+    @FXML
+    private TableColumn doctorSetColumn;
     @FXML
     private TextField doctor;
     @FXML
-    private Label username;
-    @FXML
     private DatePicker date;
-
     @FXML
     private Label message;
 
-    public void initialize(){
-        username.setText(UsersList.logat);
+
+    @FXML
+    public void initialize() throws IOException {
+        reload();
     }
 
-    public void addAppointment() {
-        AppointmentList.addAppointment(new Appointment(String.valueOf(date.getValue()), username.getText(), doctor.getText()));
+    public void reload() throws IOException {
+        ArrayList<Appointment> App;
+        AppointmentList.loadUsersFromFile();
+        App = AppointmentList.getPatientAppointment();
+
+        ObservableList<Appointment> Info = FXCollections.observableArrayList(App);
+
+        tableOfSetAppointments.setItems(Info);
+        dateSetColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        doctorSetColumn.setCellValueFactory((new PropertyValueFactory<>("doctor")));
+    }
+
+
+    public void addAppointment() throws IOException {
+        AppointmentList.addAppointment(new Appointment(String.valueOf(date.getValue()),UsersList.logat, doctor.getText()));
         message.setText("Appointment made. Thank you!");
+        doctor.setText("");
         AppointmentList.persistAppointment();
+        reload();
     }
 
 }
