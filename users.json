@@ -58,4 +58,16 @@
   "username" : "fkefejrbf",
   "password" : "cdv",
   "role" : "doctor"
+}, {
+  "username" : "doc1",
+  "password" : "doc1",
+  "role" : "doctor"
+}, {
+  "username" : "doctor1",
+  "password" : "doctor1",
+  "role" : "Doctor"
+}, {
+  "username" : "doc2",
+  "password" : "doc2",
+  "role" : "Doctor"
 } ]

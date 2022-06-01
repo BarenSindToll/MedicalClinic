@@ -11,8 +11,11 @@
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.user.AdminController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.AdminController">
   <tabs>
       <Tab text="Modify Appointments">
           <content>
@@ -23,7 +26,7 @@
                               <TableColumn fx:id="dateSetColumn" prefWidth="160.0" text="date" />
                               <TableColumn fx:id="patientColumn" prefWidth="160.0" text="patient" />
                               <TableColumn fx:id="doctorSetColumn" prefWidth="160.0" text="doctor" />
-                              <TableColumn fx:id="specialtySetColumn" prefWidth="160.0" text="specialty" />
+                              <TableColumn fx:id="specialtySetColumn" prefWidth="160.0" text="details" />
 
                           </columns>
                           <effect>
@@ -31,64 +34,57 @@
                           </effect>
                       </TableView>
                   </children>
+
+                  <Text fx:id="logoutMessage" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut"
+                          text="Log Out"/>
+
               </AnchorPane>
           </content>
       </Tab>
 
-      <Tab text="Modify doctors">
+
+      <Tab text="Edit doctors">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+
+                   <Label layoutX="96.0" layoutY="50.0" text="Please enter the doctor account you want to add." textFill="WHITE">
+                       <font>
+                           <Font name="Lucida Calligraphy Italic" size="18.0" />
+                       </font>
+                   </Label>
+                  <TextField fx:id="newDocName" layoutX="96.0" layoutY="100.0" prefHeight="40.0" prefWidth="260.0" promptText="Username"/>
+                   <TextField fx:id="newDocPassword" layoutX="96.0" layoutY="150.0" prefHeight="48.0" prefWidth="261.0" promptText="Password" />
+                   <Button layoutX="500.0" layoutY="110.0" mnemonicParsing="false" onAction="#addDoctor" onMouseClicked="#addName" prefHeight="90.0" prefWidth="156.0" text="Add" />
+                   <ListView fx:id="listOfNames" layoutX="96.0" layoutY="250.0" prefHeight="200.0" prefWidth="260.0" />
+                   <Button layoutX="500.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#removeName" prefHeight="90.0" prefWidth="156.0" text="Remove" />
+
+
+
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+
+      <Tab text="Edit patients">
           <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                      <TableView fx:id="tableOfDoctors" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
-                          <columns>
 
-                              <TableColumn fx:id="doctorColumn" prefWidth="190.0" text="doctor" />
-                              <TableColumn fx:id="specialtyColumn" prefWidth="190.0" text="specialty" />
-
-                          </columns>
-                          <effect>
-                              <Glow />
-                          </effect>
-                      </TableView>
-
-                      <TextField fx:id="name" layoutX="200.0" layoutY="234.0" promptText="Doctor's name">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="14.0" />
-                          </font>
-                      </TextField>
-                      <TextField fx:id="service" layoutX="200.0" layoutY="279.0" promptText="Service">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="14.0" />
-                          </font>
-                      </TextField>
-
-                      <Button fx:id="createButton" layoutX="212.0" layoutY="366.0" mnemonicParsing="false" onAction="#doctorRegister" text="Create entry" textFill="#162c53">
-                          <font>
-                              <Font name="Lucida Calligraphy Italic" size="18.0" />
-                          </font>
-                      </Button>
-
-                      <Label fx:id="wrongCreate" layoutX="48.0" layoutY="168.0" prefHeight="28.0" prefWidth="546.0" textFill="RED">
+                      <Label layoutX="96.0" layoutY="50.0" text="Please select the patient account you want to remove." textFill="WHITE">
                           <font>
                               <Font name="Lucida Calligraphy Italic" size="18.0" />
                           </font>
                       </Label>
+                      <ListView fx:id="listPatientOfNames" layoutX="96.0" layoutY="100.0" prefHeight="200.0" prefWidth="260.0" />
+                      <Button layoutX="500.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#removePatient" prefHeight="90.0" prefWidth="156.0" text="Remove" />
+
+
+
                   </children>
               </AnchorPane>
           </content>
-      </Tab>
-      <Tab text="Edit">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <Button layoutX="167.0" layoutY="344.0" mnemonicParsing="false" onAction="#addDoctor" onMouseClicked="#addName" prefHeight="82.0" prefWidth="138.0" text="Add" />
-                  <TextField fx:id="newDocName" layoutX="96.0" layoutY="231.0" prefHeight="40.0" prefWidth="260.0" />
-                  <Button layoutX="603.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#removeName" prefHeight="90.0" prefWidth="156.0" text="Remove" />
-                  <ListView fx:id="listOfNames" layoutX="573.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
-                  <TextField fx:id="newDocPassword" layoutX="96.0" layoutY="277.0" prefHeight="48.0" prefWidth="261.0" />
-               </children>
-            </AnchorPane>
-        </content>
       </Tab>
 
   </tabs>

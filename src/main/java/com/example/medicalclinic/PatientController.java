@@ -5,7 +5,13 @@ import com.example.medicalclinic.appointment.AppointmentList;
 import com.example.medicalclinic.user.UsersList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
+import javafx.fxml.Initializable;
+import java.util.ResourceBundle;
+import java.net.URL;
+import javafx.event.ActionEvent;
 
 public class PatientController {
     public TableView tableOfSetAppointments;
@@ -20,15 +26,26 @@ public class PatientController {
     private DatePicker date;
 
     @FXML
+    Text logoutMessage;
+
+    @FXML
     private Label message;
 
     public void initialize(){
-        message.setText("Do you want to make an appointment?");
         username.setText(UsersList.logat);
     }
 
     public void addAppointment() {
         AppointmentList.addAppointment(new Appointment(String.valueOf(date.getValue()), username.getText(), doctor.getText()));
         message.setText("Appointment made. Thank you!");
+    }
+
+    public void logOut() {
+        Main m = new Main();
+        try {
+            m.changeScene("initial.fxml");
+        } catch (Exception e) {
+            logoutMessage.setText("Failed to log out...");
+        }
     }
 }

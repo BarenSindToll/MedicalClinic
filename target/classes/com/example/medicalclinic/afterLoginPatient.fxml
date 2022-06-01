@@ -3,39 +3,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.PatientController">
-  <tabs>
-      <Tab text="Your Appointments">
-          <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                  <children>
-                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
-                          <columns>
-                              <TableColumn fx:id="dateSetColumn" prefWidth="190.0" text="date" />
-                              <TableColumn fx:id="doctorSetColumn" prefWidth="190.0" text="doctor" />
-                              <TableColumn fx:id="specialtySetColumn" prefWidth="190.0" text="specialty" />
-                          </columns>
-                          <effect>
-                              <Glow />
-                          </effect>
-                      </TableView>
-                  </children>
-              </AnchorPane>
-          </content>
-      </Tab>
-      <Tab text="Make an appointment">
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
-              <Button layoutX="362.0" layoutY="321.0" mnemonicParsing="false" onAction="#addAppointment"
-                      text="Make Appointment"/>
-              <DatePicker fx:id="date" layoutX="362.0" layoutY="128.0"/>
-              <Label layoutX="305.0" layoutY="132.0" text="Date: "/>
-              <Label fx:id="username"  layoutX="375.0" layoutY="180.0" text="Date: "/>
-              <TextField fx:id="doctor" layoutX="375.0" layoutY="230.0"/>
-              <Label layoutX="283.0" layoutY="184.0" text="Patient name: "/>
-              <Label layoutX="285.0" layoutY="234.0" text="Doctor name:"/>
-              <Label layoutX="408.0" layoutY="443.0" fx:id="message" textAlignment="CENTER"/>
-          </AnchorPane>
-      </Tab>
-  </tabs>
+    <tabs>
+        <Tab text="Your Appointments">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                            <columns>
+                                <TableColumn fx:id="dateSetColumn" prefWidth="190.0" text="date" />
+                                <TableColumn fx:id="doctorSetColumn" prefWidth="190.0" text="doctor" />
+                                <TableColumn fx:id="specialtySetColumn" prefWidth="190.0" text="details" />
+                            </columns>
+                            <effect>
+                                <Glow />
+                            </effect>
+                        </TableView>
+                    </children>
+
+                    <Text fx:id="logoutMessage" />
+                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut"
+                            text="Log Out"/>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Make an appointment">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
+                <Button layoutX="362.0" layoutY="321.0" mnemonicParsing="false" onAction="#addAppointment"
+                        text="Make Appointment"/>
+                <DatePicker fx:id="date" layoutX="362.0" layoutY="128.0"/>
+                <Label layoutX="305.0" layoutY="132.0" text="Date: "/>
+                <Label fx:id="username"  layoutX="375.0" layoutY="180.0" text="Patient"/>
+                <TextField fx:id="doctor" layoutX="375.0" layoutY="230.0"/>
+                <Label layoutX="283.0" layoutY="180.0" text="Patient name"/>
+                <Label layoutX="285.0" layoutY="234.0" text="Doctor name:"/>
+                <Label layoutX="350.0" layoutY="443.0" fx:id="message" textAlignment="CENTER"/>
+
+            </AnchorPane>
+        </Tab>
+    </tabs>
 </TabPane>
