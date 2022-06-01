@@ -6,11 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
 public class AdminController {
-    public TextField newDocPassword;
+    public PasswordField newDocPassword;
     public TextField name2;
     public Label wrongCreate;
     public Button createButton;
@@ -26,6 +27,7 @@ public class AdminController {
     public TextField service;
     public TableColumn specialtySetColumn;
     public TextField newDocName;
+    public Text ErrorText;
 
     public AdminController()
     {
@@ -53,8 +55,8 @@ public class AdminController {
 
     @FXML
     void removeName(MouseEvent event) {
-        int selectID = listOfNames.getSelectionModel().getSelectedIndex();
-        listOfNames.getItems().remove(selectID);
+        String selectedName = listOfNames.getSelectionModel().getSelectedItem();
+        UsersList.removeUser(selectedName);
         initialize();
     }
 
@@ -63,10 +65,18 @@ public class AdminController {
     }
 
     public void addDoctor(ActionEvent actionEvent) {
+        ErrorText.setText("");
+        if(newDocName.getText().isEmpty() || newDocPassword.getText().isEmpty()) {
+            ErrorText.setText("Name and password can't be empty!");
+            return;
+        }
         try {
             Register.addUser(newDocName.getText(),newDocPassword.getText(),"doctor");
+            newDocName.setText("");
+            newDocPassword.setText("");
         } catch (UsernameAlreadyExistsException e) {
             //pui un text pe ecran
+            ErrorText.setText("Doctor with this name already exists!");
         }
         initialize();
     }
