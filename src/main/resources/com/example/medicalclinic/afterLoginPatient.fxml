@@ -14,7 +14,7 @@
                           <columns>
                               <TableColumn fx:id="dateSetColumn" prefWidth="190.0" text="date" />
                               <TableColumn fx:id="doctorSetColumn" prefWidth="190.0" text="doctor" />
-                              <TableColumn fx:id="specialtySetColumn" prefWidth="190.0" text="specialty" />
+                              <TableColumn fx:id="specialtySetColumn" prefWidth="190.0" text="details" />
                           </columns>
                           <effect>
                               <Glow />
