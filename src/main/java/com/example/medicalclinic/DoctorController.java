@@ -1,27 +1,44 @@
 package com.example.medicalclinic;
 
 import com.example.medicalclinic.appointment.Appointment;
+import com.example.medicalclinic.appointment.AppointmentList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class DoctorController {
+    @FXML
+    public TableColumn dateSetColumn;
+    @FXML
+    public TableView tableOfSetAppointments;
+    @FXML
+    public TableView tableOfPatients;
+    @FXML
+    public TableColumn historyColumn;
+    @FXML
+    public TableColumn patientColumn;
+    @FXML
+    public TableColumn patientSetColumn;
 
     @FXML
-    private TableColumn<Appointment, String> doctorColumn;
+    public void initialize() throws IOException {
 
-    @FXML
-    private TableColumn<Appointment, String> dateColumn;
+        ArrayList<Appointment>App;
+        AppointmentList.loadUsersFromFile();
+        App = AppointmentList.getAppointment();
 
-    @FXML
-    private TableColumn<Appointment, String> serviceColumn;
+        ObservableList<Appointment> Info = FXCollections.observableArrayList(App);
 
-    @FXML
-    private TableView<Appointment> tableOfAppointments;
-
-    @FXML
-    private TableColumn<?, ?> patientColumn;
-
+        tableOfSetAppointments.setItems(Info);
+        dateSetColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        patientSetColumn.setCellValueFactory((new PropertyValueFactory<>("patient")));
+    }
 
 
 }

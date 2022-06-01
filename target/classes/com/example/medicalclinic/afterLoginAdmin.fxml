@@ -41,7 +41,7 @@
           <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                      <TableView fx:id="tableOfDoctors" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
+                      <TableView fx:id="tableOfDoctors" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="570.0" style="-fx-background-color: transparent;">
                           <columns>
 
                               <TableColumn fx:id="doctorColumn" prefWidth="190.0" text="doctor" />

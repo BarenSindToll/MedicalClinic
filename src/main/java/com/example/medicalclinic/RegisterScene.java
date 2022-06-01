@@ -17,6 +17,10 @@ import java.util.ResourceBundle;
 
 public class RegisterScene implements Initializable {
 
+    public Button logInButton;
+    public Button createButton;
+    public Label wrongLogIn;
+
     public RegisterScene() {
 
     }

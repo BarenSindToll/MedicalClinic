@@ -2,6 +2,7 @@ package com.example.medicalclinic;
 
 import com.example.medicalclinic.appointment.Appointment;
 import com.example.medicalclinic.appointment.AppointmentList;
+import com.example.medicalclinic.servicies.Register;
 import com.example.medicalclinic.user.UsersList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,5 +30,7 @@ public class PatientController {
     public void addAppointment() {
         AppointmentList.addAppointment(new Appointment(String.valueOf(date.getValue()), username.getText(), doctor.getText()));
         message.setText("Appointment made. Thank you!");
+        AppointmentList.persistAppointment();
     }
+
 }

@@ -1,7 +1,6 @@
 com\example\medicalclinic\PatientController.class
 com\example\medicalclinic\Main.class
 com\example\medicalclinic\appointment\AppointmentList.class
-com\example\medicalclinic\DoctorRegisterScene.class
 com\example\medicalclinic\exceptions\DoctorAlreadyExistsException.class
 com\example\medicalclinic\user\UsersList.class
 com\example\medicalclinic\doctors\Doctors.class

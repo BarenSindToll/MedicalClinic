@@ -15,7 +15,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Glow?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.user.AdminController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.DoctorController">
   <tabs>
       <Tab text="Your Appointments">
           <content>
@@ -24,7 +24,7 @@
                       <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; -fx-view-order: ascending;">
                           <columns>
                               <TableColumn fx:id="dateSetColumn" prefWidth="240.0" text="Date" />
-                              <TableColumn fx:id="doctorSetColumn" prefWidth="240.0" text="Patient" />
+                              <TableColumn fx:id="patientSetColumn" prefWidth="240.0" text="Patient" />
                           </columns>
                           <effect>
                               <Glow />
