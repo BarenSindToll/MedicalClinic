@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.time.chrono.ChronoLocalDate;
@@ -54,6 +55,18 @@ public class PatientController {
         doctor.setText("");
         AppointmentList.persistAppointment();
         reload();
+    }
+
+    @FXML
+    Text logoutMessage;
+
+    public void logOut() {
+        Main m = new Main();
+        try {
+            m.changeScene("initial.fxml");
+        } catch (Exception e) {
+            logoutMessage.setText("Failed to log out...");
+        }
     }
 
 }

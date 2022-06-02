@@ -14,6 +14,9 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #22a08f;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalclinic.DoctorController">
   <tabs>
@@ -31,6 +34,11 @@
                           </effect>
                       </TableView>
                   </children>
+
+                  <Text fx:id="logoutMessage" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#logOut"
+                          text="Log Out"/>
+
               </AnchorPane>
           </content>
       </Tab>
