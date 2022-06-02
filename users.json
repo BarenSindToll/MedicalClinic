@@ -49,5 +49,10 @@
 }, {
   "username" : "csdcs",
   "password" : "cvsdv",
+
+  "role" : "Doctor"
+}, {
+  "username" : "gfbfgb",
+  "password" : "fgbf",
   "role" : "doctor"
 } ]
