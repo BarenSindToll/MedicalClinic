@@ -1,1 +1,9 @@
-[
+[ {
+  "date" : "2022-06-07",
+  "patient" : "patient1",
+  "doctor" : "doc"
+}, {
+  "date" : "2022-06-09",
+  "patient" : "patient1",
+  "doctor" : "q"
+} ]

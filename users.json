@@ -54,4 +54,8 @@
   "username" : "gfbfgb",
   "password" : "fgbf",
   "role" : "doctor"
+}, {
+  "username" : "as",
+  "password" : "as",
+  "role" : "Doctor"
 } ]

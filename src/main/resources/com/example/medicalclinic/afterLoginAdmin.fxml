@@ -22,12 +22,11 @@
           <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="105.0" layoutY="69.0" prefHeight="375.0" prefWidth="640.0" style="-fx-background-color: transparent; ">
+                      <TableView fx:id="tableOfSetAppointments" editable="true" layoutX="130.0" layoutY="80.0" prefHeight="375.0" prefWidth="480.0" style="-fx-background-color: transparent; ">
                           <columns>
                               <TableColumn fx:id="dateSetColumn" prefWidth="160.0" text="date" />
-                              <TableColumn fx:id="patientColumn" prefWidth="160.0" text="patient" />
+                              <TableColumn fx:id="patientSetColumn" prefWidth="160.0" text="patient" />
                               <TableColumn fx:id="doctorSetColumn" prefWidth="160.0" text="doctor" />
-                              <TableColumn fx:id="specialtySetColumn" prefWidth="160.0" text="specialty" />
 
                           </columns>
                           <effect>

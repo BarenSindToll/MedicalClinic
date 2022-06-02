@@ -1,35 +1,34 @@
 package com.example.medicalclinic;
 
+import com.example.medicalclinic.appointment.Appointment;
+import com.example.medicalclinic.appointment.AppointmentList;
 import com.example.medicalclinic.exceptions.UsernameAlreadyExistsException;
 import com.example.medicalclinic.servicies.Register;
 import com.example.medicalclinic.user.Users;
 import com.example.medicalclinic.user.UsersList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class AdminController {
-    public PasswordField newDocPassword;
+    public TextField newDocPassword;
     public TextField name2;
-    public Label wrongCreate;
-    public Button createButton;
-    public TableColumn specialtyColumn;
+
     public TableView tableOfSetAppointments;
     public TableColumn dateSetColumn;
     public TableColumn doctorSetColumn;
-    public TableView tableOfPatients;
-    public TableColumn patientColumn;
-    public TableColumn historyColumn;
-    public TableColumn doctorColumn;
-    public TableView tableOfDoctors;
-    public TextField service;
-    public TableColumn specialtySetColumn;
+
+    public TableColumn patientSetColumn;
+
     public TextField newDocName;
-    public Text ErrorText;
 
     public AdminController()
     {
@@ -46,6 +45,8 @@ public class AdminController {
         for(Users u : dl)
             listOfNames.getItems().add(u.getUsername());
     }
+
+
     @FXML
     private TextField name;
 
@@ -57,8 +58,8 @@ public class AdminController {
 
     @FXML
     void removeName(MouseEvent event) {
-        String selectedName = listOfNames.getSelectionModel().getSelectedItem();
-        UsersList.removeUser(selectedName);
+        int selectID = listOfNames.getSelectionModel().getSelectedIndex();
+        listOfNames.getItems().remove(selectID);
         initialize();
     }
 
@@ -67,21 +68,15 @@ public class AdminController {
     }
 
     public void addDoctor(ActionEvent actionEvent) {
-        ErrorText.setText("");
-        if(newDocName.getText().isEmpty() || newDocPassword.getText().isEmpty()) {
-            ErrorText.setText("Name and password can't be empty!");
-            return;
-        }
         try {
             Register.addUser(newDocName.getText(),newDocPassword.getText(),"Doctor");
-            newDocName.setText("");
-            newDocPassword.setText("");
         } catch (UsernameAlreadyExistsException e) {
-            //pui un text pe ecran
-            ErrorText.setText("Doctor with this name already exists!");
+
         }
         initialize();
     }
+
+
     @FXML
     private ListView<String> listPatientOfNames;
 
@@ -100,8 +95,6 @@ public class AdminController {
         initialize2();
     }
 
-
-
     @FXML
     Text logoutMessage;
 
@@ -113,4 +106,6 @@ public class AdminController {
             logoutMessage.setText("Failed to log out...");
         }
     }
+
+
 }
